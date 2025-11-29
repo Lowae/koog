@@ -30,8 +30,8 @@ public fun streamFrameFlow(@BuilderInference block: suspend FlowCollector<Stream
 /**
  * Emits a [StreamFrame.Append] with the given [text].
  */
-public suspend fun FlowCollector<StreamFrame>.emitAppend(text: String): Unit =
-    emit(StreamFrame.Append(text))
+public suspend fun FlowCollector<StreamFrame>.emitAppend(text: String, thought: Boolean? = null): Unit =
+    emit(StreamFrame.Append(text, thought))
 
 /**
  * Emits a [StreamFrame.End] with the given [finishReason].
@@ -74,9 +74,9 @@ public class StreamFrameFlowBuilder(
     /**
      * Emits a [StreamFrame.Append] with the given [text].
      */
-    public suspend fun emitAppend(text: String) {
+    public suspend fun emitAppend(text: String, thought: Boolean? = null) {
         tryEmitPendingToolCall()
-        flowCollector.emitAppend(text)
+        flowCollector.emitAppend(text, thought)
     }
 
     /**

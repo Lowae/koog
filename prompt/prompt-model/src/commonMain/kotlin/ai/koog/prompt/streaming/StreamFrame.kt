@@ -19,7 +19,8 @@ public sealed interface StreamFrame {
      */
     @Serializable
     public data class Append(
-        val text: String
+        val text: String,
+        val thought: Boolean? = null,
     ) : StreamFrame
 
     /**
