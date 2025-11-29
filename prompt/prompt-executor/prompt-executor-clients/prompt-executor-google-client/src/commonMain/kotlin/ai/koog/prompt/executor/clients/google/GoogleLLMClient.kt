@@ -213,7 +213,7 @@ public open class GoogleLLMClient(
                                             content = part.functionCall.args?.toString() ?: "{}"
                                         )
 
-                                        is GooglePart.Text -> emitAppend(part.text)
+                                        is GooglePart.Text -> emitAppend(part.text, part.thought)
                                         else -> Unit
                                     }
                                 }
