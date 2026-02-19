@@ -14,6 +14,7 @@ kotlin {
             dependencies {
                 api(project(":prompt:prompt-executor:prompt-executor-clients:prompt-executor-anthropic-client"))
                 api(project(":prompt:prompt-executor:prompt-executor-clients:prompt-executor-bedrock-client"))
+                api(project(":prompt:prompt-executor:prompt-executor-clients:prompt-executor-dashscope-client"))
                 api(project(":prompt:prompt-executor:prompt-executor-clients:prompt-executor-deepseek-client"))
                 api(project(":prompt:prompt-executor:prompt-executor-clients:prompt-executor-google-client"))
                 api(project(":prompt:prompt-executor:prompt-executor-clients:prompt-executor-mistralai-client"))
